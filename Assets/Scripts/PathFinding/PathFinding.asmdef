@@ -1,0 +1,15 @@
+{
+    "name": "PathFinding",
+    "references": [
+        "GUID:e723b61cff1f40f4f92d478aa7fce306"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
