@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RangeWeapon : Weapon
 {
+    [SerializeField] private RangeWeaponAnimator _animator;
     [SerializeField] private BulletMovement _bullet;
     [SerializeField] private Transform _spawnPosition;
 
@@ -16,8 +17,7 @@ public class RangeWeapon : Weapon
 
     private void Start()
     {
-        _animator.AttackFinishing += () => {
-            _isAttacking = false;
+        _animator.Shooted += () => {
             InstantiateBullet();
         };
     }
@@ -25,7 +25,6 @@ public class RangeWeapon : Weapon
 
     public override void Attack()
     {
-        _isAttacking = true;
         _animator.RunAttackAnimation();
     }
 

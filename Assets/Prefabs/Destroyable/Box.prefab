@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 2559930645356995280}
   - component: {fileID: 2559930645356995281}
   - component: {fileID: 2559930645356995282}
-  - component: {fileID: 2559930645356995283}
   - component: {fileID: 2559930645356995284}
+  - component: {fileID: 938184779784524630}
+  - component: {fileID: 85410172}
   m_Layer: 11
   m_Name: Box
   m_TagString: Untagged
@@ -72,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -174804484191063705, guid: f5889e22d339c9949854fc6c68067fbe,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -111,21 +112,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9198904, y: 0.89981604}
   m_EdgeRadius: 0
---- !u!114 &2559930645356995283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2559930645356995285}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d20512ce13d42e4eb28032a2f9c5887, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _loot: {fileID: 0}
-  _health: {fileID: 2559930645356995284}
-  _spawnPoint: {fileID: 2559930645356995280}
 --- !u!114 &2559930645356995284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,3 +126,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 1
   _canDestroy: 1
+  _takedDamageSound: {fileID: 8300000, guid: 707ebd0a333c5b347910b321f4a22e1e, type: 3}
+  _deadSound: {fileID: 8300000, guid: 707ebd0a333c5b347910b321f4a22e1e, type: 3}
+--- !u!114 &938184779784524630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2559930645356995285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab2dddf5a0964f54d8e5129a90a1639d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _occupiedNeighbourCells: []
+  _healt: {fileID: 2559930645356995284}
+--- !u!114 &85410172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2559930645356995285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d20512ce13d42e4eb28032a2f9c5887, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _loot: {fileID: 8360094192372738302, guid: 2792e7d07ea6f34418b6eb26e093c6b8, type: 3}
+  _health: {fileID: 2559930645356995284}
+  _spawnPoint: {fileID: 2559930645356995280}

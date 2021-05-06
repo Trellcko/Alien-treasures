@@ -6,6 +6,8 @@ public class Health : MonoBehaviour
     [Range(1, 100)]
     [SerializeField] private float _maxHealth;
     [SerializeField] private bool _canDestroy;
+    [SerializeField] private AudioClip _takedDamageSound;
+    [SerializeField] private AudioClip _deadSound;
 
     public event Action<float> DamageTaken;
     public event Action<float> HPRegenerated;
@@ -41,12 +43,14 @@ public class Health : MonoBehaviour
         {
             _currentHealth = 0;
             Died?.Invoke();
-            if(_canDestroy)
+            AudioManager.Instance.PlaySound(_deadSound);
+            if (_canDestroy)
             {
                 Destroy(gameObject);
+                return;
             }
         }
-
+        AudioManager.Instance.PlaySound(_takedDamageSound);
         DamageTaken?.Invoke(_currentHealth);
     }
 

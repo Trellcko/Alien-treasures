@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3454881847652029865}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.036, y: 0.126, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2597199230389999655}
@@ -41,9 +41,8 @@ GameObject:
   - component: {fileID: 2597199230389999655}
   - component: {fileID: 8763469830188607944}
   - component: {fileID: 5196847368520008033}
-  - component: {fileID: 4707207192764402955}
-  - component: {fileID: 4578555478488830314}
   - component: {fileID: 6113143643483814597}
+  - component: {fileID: 873184698426091158}
   m_Layer: 0
   m_Name: Bow
   m_TagString: Untagged
@@ -104,7 +103,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 9147546874185701050, guid: 05f7fe9598db71f41968c561500b869d,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -136,44 +135,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4707207192764402955
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5338494439897371336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b22c767bb77004147ae075df16f5c29a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!61 &4578555478488830314
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5338494439897371336}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.0055011883, y: 0.042972185}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.18797933, y: 0.5621696}
-  m_EdgeRadius: 0
 --- !u!114 &6113143643483814597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,9 +147,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f5e186e60b827d41b24d2b3949f120b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 4707207192764402955}
   _enemyLayer:
     serializedVersion: 2
     m_Bits: 256
-  _bullet: {fileID: 0}
+  _animator: {fileID: 873184698426091158}
+  _bullet: {fileID: 8750404188772301553, guid: 38527a3d496515449a8d856f1f689796, type: 3}
   _spawnPosition: {fileID: 3707448309124466721}
+--- !u!114 &873184698426091158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5338494439897371336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95bd78d5db9cabc4f8ba77a1f41b326c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -4,9 +4,6 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class WeaponAnimator : MonoBehaviour
 {
-    public event Action AttackFinishing;
-
-
     private Animator _animator;
 
 
@@ -21,11 +18,6 @@ public class WeaponAnimator : MonoBehaviour
     {
         _animator.SetTrigger(ATTACK);
         _animator.ResetTrigger(CANCEL_ATTACK);
-    }
-
-    public void FinishAttacking()
-    {
-        AttackFinishing?.Invoke();
     }
 
     public void CancelAttackAnimation()

@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 1692384297014375598}
   - component: {fileID: 1692384297014375599}
   - component: {fileID: 818072457}
+  - component: {fileID: 1480218392526738478}
   m_Layer: 11
   m_Name: House
   m_TagString: Untagged
@@ -104,7 +105,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -3001449038190906842, guid: f5889e22d339c9949854fc6c68067fbe,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -131,6 +132,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 100
   _canDestroy: 1
+  _takedDamageSound: {fileID: 8300000, guid: 707ebd0a333c5b347910b321f4a22e1e, type: 3}
+  _deadSound: {fileID: 8300000, guid: 707ebd0a333c5b347910b321f4a22e1e, type: 3}
 --- !u!114 &1692384297014375599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,6 +178,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.9492412, y: 1.9392047}
   m_EdgeRadius: 0
+--- !u!114 &1480218392526738478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692384297014375594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab2dddf5a0964f54d8e5129a90a1639d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _occupiedNeighbourCells:
+  - {x: -1, y: 0, z: 0}
+  - {x: 0, y: -1, z: 0}
+  - {x: -1, y: -1, z: 0}
+  _healt: {fileID: 1692384297014375598}
 --- !u!1001 &1692384296510487437
 PrefabInstance:
   m_ObjectHideFlags: 0

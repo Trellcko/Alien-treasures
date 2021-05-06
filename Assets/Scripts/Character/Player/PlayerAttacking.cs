@@ -12,6 +12,11 @@ public class PlayerAttacking : MonoBehaviour
         InputController.Instance.Input.Player.Attacking.performed += Attack;
     }
 
+    private void OnDestroy()
+    {
+        InputController.Instance.Input.Player.Attacking.performed -= Attack;
+    }
+
     public void Attack(InputAction.CallbackContext context)
     {
         _meleeWeapon.Attack();

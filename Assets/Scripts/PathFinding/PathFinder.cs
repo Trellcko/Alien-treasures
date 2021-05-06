@@ -56,7 +56,7 @@ namespace PathFinding
             List<Vector2> result = new List<Vector2>();
             for (int i = 0; i < pathNodes.Count; i++)
             {
-                result.Add(GetWorldPosition(pathNodes[i]));
+                result.Add(GetWorldCenterPosition(pathNodes[i]));
             }
             return result;
         }
@@ -68,12 +68,22 @@ namespace PathFinding
 
         public bool CheckForFreeSpace(Vector3Int cell)
         {
-            return Physics2D.OverlapCircleNonAlloc(GetWorldPosition(cell), CellSize.x/2, new Collider2D[1], _layers) == 0;
+            return Physics2D.OverlapCircleNonAlloc(GetWorldCenterPosition(cell), (CellSize.x/2) -0.05f, new Collider2D[1], _layers) == 0;
+        }
+
+        public Vector3 GetWorldCenterPosition(Vector3Int cell)
+        {
+            return _grid.GetCellCenterWorld(cell);
         }
 
         public Vector3 GetWorldPosition(Vector3Int cell)
         {
-            return _grid.GetCellCenterWorld(cell);
+            return _grid.CellToWorld(cell);
+        }
+
+        public Vector3 GetWorldPosition(PathNode pathNode)
+        {
+            return GetWorldPosition(new Vector3Int(pathNode.X, pathNode.Y, 0));
         }
 
         private Vector3Int GetCell(Vector3 worldPosition)
@@ -81,9 +91,9 @@ namespace PathFinding
             return _grid.WorldToCell(worldPosition);
         }
 
-        public Vector3 GetWorldPosition(PathNode pathNode)
+        public Vector3 GetWorldCenterPosition(PathNode pathNode)
         {
-            return GetWorldPosition(new Vector3Int(pathNode.X, pathNode.Y, 0));
+            return GetWorldCenterPosition(new Vector3Int(pathNode.X, pathNode.Y, 0));
         }
         
         public PathNode GetNode(Vector3 worldPosition)
@@ -110,7 +120,7 @@ namespace PathFinding
             Debug.DrawLine(finishVerticalLineStart, finishPoint, Color.red, 100);
 
 
-            Vector2 finishHorizontalLineStart = GetWorldPosition(new Vector3Int(_initialCell.x, _size.y + _initialCell.y, 0));
+            Vector2 finishHorizontalLineStart = GetWorldCenterPosition(new Vector3Int(_initialCell.x, _size.y + _initialCell.y, 0));
             Debug.DrawLine(finishHorizontalLineStart, finishHorizontalLineStart, Color.red, 100);
         }
 
